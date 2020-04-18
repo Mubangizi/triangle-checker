@@ -3,12 +3,16 @@ module.exports = function(triangle) {
   
   const a = triangle.a, b = triangle.b, c = triangle.c
 
-  // check if there integers
-  if(!Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c)) 
+  // check if they are integers
+  if(typeof a === 'string' || typeof b === 'string' || typeof c === 'string')
     return "NOT INTEGER";
-  // one of them is a 0
-  if((a<=0) || (b<=0) || (c<=0)) return "ERROR";
+  
+  //Check if it's valid triangle
+  if(a+b<=c || a+c<=b || c+b<=a) return "ERROR";
+
   // Equilateral
   if(a === b && b === c) return "EQUILATERAL";
+  // Isosceles
+  if((a==b) || (a==c) || (b==c)) return "ISOSCELES";
   
 };

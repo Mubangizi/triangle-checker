@@ -28,7 +28,7 @@ app.get('/triangle', (req, res)=> {
 
   if(triangle ==="NOT INTEGER"){
     return res.status(401).json({
-      message: "Some Params are not Integers"
+      message: "Some Params are strings"
     })
   }
   if (triangle === "ERROR"){
