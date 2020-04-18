@@ -15,7 +15,7 @@ app.get('/', (req, res)=> {
   res.send('App running successfully!');
 })
 
-//triangl
+//triangle
 app.get('/triangle', (req, res)=> {
   console.log(req.body);
   if(!req.body.a || !req.body.b || !req.body.c){
@@ -23,12 +23,22 @@ app.get('/triangle', (req, res)=> {
       message : "Mandatory params are missing!"
     })
   }
-  else{
-    const triangle = require('./app')(req.body);
-    return res.status(200).json({
-      message : triangle
+
+  const triangle = require('./app')(req.body);
+
+  if(triangle ==="NOT INTEGER"){
+    return res.status(401).json({
+      message: "Some Params are not Integers"
     })
   }
+  if (triangle === "ERROR"){
+    return res.status(400).json({
+      message: "Not a triangle"
+    })
+  }
+  return res.status(200).json({
+    message : triangle
+  })
 })
 
 
