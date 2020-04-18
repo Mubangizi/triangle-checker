@@ -8,11 +8,13 @@ module.exports = function(triangle) {
     return "NOT INTEGER";
   
   //Check if it's valid triangle
-  if(a+b<=c || a+c<=b || c+b<=a) return "ERROR";
+  if(a+b<=c || a+c<=b || c+b<=a) return "Incorrect";
 
   // Equilateral
-  if(a === b && b === c) return "EQUILATERAL";
+  if(a === b && b === c) return "Equilateral";
+
   // Isosceles
-  if((a==b) || (a==c) || (b==c)) return "ISOSCELES";
-  
+  if((a==b) || (a==c) || (b==c)) return " Isosceles";
+
+  return "Scalene";
 };

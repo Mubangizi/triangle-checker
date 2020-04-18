@@ -27,15 +27,11 @@ app.get('/triangle', (req, res)=> {
   const triangle = require('./app')(req.body);
 
   if(triangle ==="NOT INTEGER"){
-    return res.status(401).json({
+    return res.status(400).json({
       message: "Some Params are strings"
     })
   }
-  if (triangle === "ERROR"){
-    return res.status(400).json({
-      message: "Not a triangle"
-    })
-  }
+
   return res.status(200).json({
     message : triangle
   })
