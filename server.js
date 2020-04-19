@@ -12,7 +12,7 @@ app.listen(port, () => {
  
 //Define request response in root URL (/)
 app.get('/', (req, res)=> {
-  res.send('App running successfully!');
+  res.status(200).send('App running successfully!');
 })
 
 //triangle
@@ -37,4 +37,4 @@ app.get('/triangle', (req, res)=> {
   })
 })
 
-
+module.exports = app;
