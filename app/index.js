@@ -14,7 +14,7 @@ module.exports = function(triangle) {
   if(a === b && b === c) return "Equilateral";
 
   // Isosceles
-  if((a==b) || (a==c) || (b==c)) return " Isosceles";
+  if((a==b) || (a==c) || (b==c)) return "Isosceles";
 
   return "Scalene";
 };

@@ -1,6 +1,6 @@
 const express = require('express'),
 bodyParser = require("body-parser"),
-port = 3000,
+port = 4000,
 app = express();
 
 app.use(bodyParser.json());
@@ -17,7 +17,7 @@ app.get('/', (req, res)=> {
 
 //triangle
 app.get('/triangle', (req, res)=> {
-  console.log(req.body);
+  
   if(!req.body.a || !req.body.b || !req.body.c){
     return res.status(401).json({
       message : "Mandatory params are missing!"
