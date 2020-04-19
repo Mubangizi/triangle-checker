@@ -1,6 +1,6 @@
 const express = require('express'),
 bodyParser = require("body-parser"),
-port = 3000,
+port = 4000,
 app = express();
 
 app.use(bodyParser.json());
@@ -12,22 +12,22 @@ app.listen(port, () => {
  
 //Define request response in root URL (/)
 app.get('/', (req, res)=> {
-  res.send('App running successfully!');
+  res.status(200).send('App running successfully!');
 })
 
 //triangle
 app.get('/triangle', (req, res)=> {
-  console.log(req.body);
+  
   if(!req.body.a || !req.body.b || !req.body.c){
     return res.status(401).json({
-      message : "Mandatory params are missing!"
+      message : "Mandatory params are missing! require a, b and c"
     })
   }
 
   const triangle = require('./app')(req.body);
 
   if(triangle ==="NOT INTEGER"){
-    return res.status(400).json({
+    return res.status(401).json({
       message: "Some Params are strings"
     })
   }
@@ -37,4 +37,4 @@ app.get('/triangle', (req, res)=> {
   })
 })
 
-
+module.exports = app;
