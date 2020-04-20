@@ -16,3 +16,5 @@
 *  Run  `npm start` to start the application.
 
 *  Run  `npm test` to run tests for the Application.
+
+*  When running application to browser  `<server-url>/api-docs` to access the api documentation

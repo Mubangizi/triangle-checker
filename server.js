@@ -1,7 +1,9 @@
 const express = require('express'),
 bodyParser = require("body-parser"),
-port = 4000,
-app = express();
+port = 5000,
+app = express(),
+swaggerUi = require('swagger-ui-express'),
+apiDocumentation = require('./api_docs.json');
 
 app.use(bodyParser.json());
 
@@ -16,7 +18,7 @@ app.get('/', (req, res)=> {
 })
 
 //triangle
-app.get('/triangle', (req, res)=> {
+app.post('/triangle', (req, res)=> {
   
   if(!req.body.a || !req.body.b || !req.body.c){
     return res.status(401).json({
@@ -36,5 +38,7 @@ app.get('/triangle', (req, res)=> {
     message : triangle
   })
 })
+// api documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
 
 module.exports = app;

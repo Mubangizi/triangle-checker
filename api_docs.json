@@ -1,0 +1,81 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Triangle Checker Api",
+    "description": "Api returns type of triangle",
+    "version": "1.0.0",
+    "contact": {
+      "email": "mubangizia22@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "triangle",
+      "description": "Triangle end points"
+    }
+  ],
+  
+  "paths": {
+    "/triangle": {
+      "post": {
+        "tags": [
+          "triangle"
+        ],
+        "summary": "Returns type of triangle",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "triangle Sides",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/triangleSides"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "type of triangle"
+          },
+          "401": {
+            "description": "invalid input, object invalid"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "triangleSides": {
+      "type": "object",
+      "required": [
+        "a",
+        "b",
+        "c"
+      ],
+      "properties": {
+        "a": {
+          "type": "integer",
+          "example": 1
+        },
+        "b": {
+          "type": "integer",
+          "example": 1
+        },
+        "c": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    }
+  }
+}
