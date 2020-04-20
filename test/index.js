@@ -26,7 +26,7 @@ describe('Init', function () {
 describe('Triangle', function () {
 
   it('Check the api request without params', function (done) {
-    chai.request(server).get('/triangle').send({}).end((err, res) => {
+    chai.request(server).post('/triangle').send({}).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(401);
       res.body.should.be.a('object');
@@ -37,7 +37,7 @@ describe('Triangle', function () {
   });
 
   it('Check the api request without integers', function (done) {
-    chai.request(server).get('/triangle').send(notIntegers).end((err, res) => {
+    chai.request(server).post('/triangle').send(notIntegers).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(401);
       res.body.should.be.a('object');
@@ -48,7 +48,7 @@ describe('Triangle', function () {
   });
 
   it('Check the api request with missing params', function (done) {
-    chai.request(server).get('/triangle').send(missingParams).end((err, res) => {
+    chai.request(server).post('/triangle').send(missingParams).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(401);
       res.body.should.be.a('object');
@@ -59,7 +59,7 @@ describe('Triangle', function () {
   });
 
   it('Check for not a triangle', function (done) {
-    chai.request(server).get('/triangle').send(notATriangle).end((err, res) => {
+    chai.request(server).post('/triangle').send(notATriangle).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(200);
       res.body.should.be.a('object');
@@ -70,7 +70,7 @@ describe('Triangle', function () {
   });
 
   it('Check for an equlateral triangle', function (done) {
-    chai.request(server).get('/triangle').send(equilateralTriangle).end((err, res) => {
+    chai.request(server).post('/triangle').send(equilateralTriangle).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(200);
       res.body.should.be.a('object');
@@ -81,7 +81,7 @@ describe('Triangle', function () {
   });
 
   it('Check for an isosceles triangle', function (done) {
-    chai.request(server).get('/triangle').send(isoscelesTriangle).end((err, res) => {
+    chai.request(server).post('/triangle').send(isoscelesTriangle).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(200);
       res.body.should.be.a('object');
@@ -92,7 +92,7 @@ describe('Triangle', function () {
   });
 
   it('Check for a Scalene', function (done) {
-    chai.request(server).get('/triangle').send(scaleneTriangle).end((err, res) => {
+    chai.request(server).post('/triangle').send(scaleneTriangle).end((err, res) => {
       should.not.exist(err);
       res.should.have.status(200);
       res.body.should.be.a('object');
