@@ -19,9 +19,7 @@
       "description": "Triangle end points"
     }
   ],
-  "schemes": [
-    "https"
-  ],
+  
   "paths": {
     "/triangle": {
       "post": {
@@ -67,15 +65,15 @@
       "properties": {
         "a": {
           "type": "integer",
-          "example": "1"
+          "example": 1
         },
         "b": {
           "type": "integer",
-          "example": "1"
+          "example": 1
         },
         "c": {
           "type": "integer",
-          "example": "1"
+          "example": 1
         }
       }
     }
