@@ -1,0 +1,12 @@
+version: "3"
+services:
+  #Node Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mubangizi/triangle-checker:latest
+    container_name: triangle-checker-api
+    restart: unless-stopped
+    ports:
+      - "50000:50000"

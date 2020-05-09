@@ -1,6 +1,6 @@
 const express = require('express'),
 bodyParser = require("body-parser"),
-port = 5000,
+port = 50000,
 app = express(),
 swaggerUi = require('swagger-ui-express'),
 apiDocumentation = require('./api_docs.json');
