@@ -1,5 +1,11 @@
+[![CircleCI](https://circleci.com/gh/Mubangizi/triangle-checker/tree/master.svg?style=svg)](https://github.com/Mubangizi/triangle-checker/tree/master)
+
 # Triangle Checker
-> A node app that returns the triangle type depending on the input
+A node app that returns the triangle type depending on the input
+### Table of API routes
+|     URL     |     HTTP Method     |     Description     |
+| ----------- | -------------------- | ------------------- |
+| /triangle | POST | Returns type of triangle |
 
 ## How to setup the project:
 #### Clone the repository
